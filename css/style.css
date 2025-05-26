@@ -1,0 +1,310 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} 
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+html{
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 25px;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+  
+  a{
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.diego{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin: 50px;
+  padding: 20px;
+}
+
+.left-column,
+.center-column,
+.right-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+
+  img{
+    border-radius: 15px
+  };
+}
+
+.social-media{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+}
+
+
+.projects,
+.projects-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: auto;
+    width: 200px;
+    height: 175px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+    border: 5px solid grey;
+    color: black;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.formacion-academica{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  color: #1d1e2f;
+
+  h2, h3, h4{
+    background-color: #333;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  p{
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
+}
+
+.areandina,
+.platzi,
+.mision-tic{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 5% auto;
+  padding: 20px;
+}
+
+.areandina img,
+.platzi img,
+.mision-tic img{
+  width: 600px;
+  height: auto;
+  padding: 25px;
+  padding: 1px;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.experiencia-laboral{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 20px;
+
+  h2, h3, h4{
+    background-color: whitesmoke;
+    color: #1d1e2f;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  li{
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
+}
+
+.platzi-associate,
+.ITS{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  margin: 5% auto;
+  padding: 20px;
+}
+
+.platzi-associate img,
+.ITS img{
+  width: 75%;
+  height: auto;
+}
+
+.contacto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  color: #1d1e2f;
+
+  h2, h3, h4{
+    background-color: #333;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  p{
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
+
+  button{
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1200px) {
+  .diego {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .areandina,
+  .platzi,
+  .mision-tic,
+  .platzi-associate,
+  .ITS {
+    grid-template-columns: 1fr;
+  }
+
+  .areandina img,
+  .platzi img,
+  .mision-tic img,
+  .platzi-associate img,
+  .ITS img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .diego {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column,
+  .center-column,
+  .right-column {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .projects,
+  .projects-2 {
+    flex-direction: column;
+  }
+
+  .projects button,
+  .projects-2 button {
+    width: 100%;
+    height: auto;
+  }
+
+  .social-media img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .formacion-academica h2,
+  .formacion-academica h3,
+  .formacion-academica h4,
+  .experiencia-laboral h2,
+  .experiencia-laboral h3,
+  .experiencia-laboral h4,
+  .contacto h2,
+  .contacto h3,
+  .contacto h4 {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .contacto button {
+    font-size: 16px;
+    padding: 5px;
+  }
+}
