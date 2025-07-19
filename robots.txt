@@ -1,5 +1,14 @@
-# www.robotstxt.org/
+# robots.txt for Diego Andrés Lopez Portfolio
 
-# Allow crawling of all content
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://andre051223.github.io/Diego-FrontendDeveloper/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow certain directories if needed
+# Disallow: /private/
+# Disallow: /temp/
