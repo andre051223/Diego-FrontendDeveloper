@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-} 
+}
+
+
+br {
+  display: block;
+  margin: 0.5em 0;
+  line-height: 1.2;
+}
 
 a {
   color: white;
@@ -14,9 +23,9 @@ li {
 }
 
 html{
+  font-family: 'Montserrat', sans-serif;
   background-color: black;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -42,13 +51,14 @@ header{
   }
 }
 
+
 .diego{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 25px;
   margin: 50px;
   padding: 20px;
 }
@@ -104,7 +114,7 @@ header{
     cursor: pointer;
     font-size: 20px;
     background-color: transparent;
-    border: 5px solid grey;
+    border: 3px solid grey;
     color: black;
     border-radius: 10px;
     align-items: center;
@@ -112,86 +122,21 @@ header{
   }
 }
 
-.formacion-academica{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  padding: 20px;
-  width: 100%;
-  background-color: whitesmoke;
-  color: #1d1e2f;
-
-  h2, h3, h4{
-    background-color: #333;
-    color: white;
-    margin: 10px;
-    padding: 10px;
-  }
-
-  p{
-    margin: 10px;
-    padding: 10px;
-    font-size: 22px;
-  }
-}
-
-.areandina,
-.platzi,
-.mision-tic{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 5% auto;
-  padding: 20px;
-}
-
+.perfila img,
+.Amaevolucionar img,
+.platzi-associate img,
+.ITS img,
 .areandina img,
 .platzi img,
 .mision-tic img{
-  width: 600px;
-  height: auto;
+  width: 550px;
+  height: 600px;
   padding: 25px;
   padding: 1px;
   border-radius: 10px;
   justify-content: center;
 }
 
-.experiencia-laboral{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  padding: 20px;
-
-  h2, h3, h4{
-    background-color: whitesmoke;
-    color: #1d1e2f;
-    margin: 10px;
-    padding: 10px;
-  }
-
-  li{
-    margin: 10px;
-    padding: 10px;
-    font-size: 22px;
-  }
-}
-
-.platzi-associate,
-.ITS{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  margin: 5% auto;
-  padding: 20px;
-}
-
-.platzi-associate img,
-.ITS img{
-  width: 75%;
-  height: auto;
-}
 
 .contacto{
   display: flex;
@@ -228,6 +173,72 @@ header{
     cursor: pointer;
   }
 }
+
+.experiencia-laboral{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  padding: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  color: black;
+
+  h2, h3, h4{
+    background-color: #333;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  p{
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
+}
+
+.formacion-academica{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 20px;
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+
+  h2, h3, h4{
+    background-color: #333;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  p{
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
+}
+
+.perfila,
+.Amaevolucionar,
+.platzi-associate,
+.ITS,
+.areandina,
+.platzi,
+.mision-tic{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  margin: 5% auto;
+  padding: 20px;
+}
+
+
 
 @media (max-width: 1200px) {
   .diego {
