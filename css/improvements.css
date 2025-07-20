@@ -171,53 +171,408 @@
 }
 
 /* Responsividad mejorada */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    .diego {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin: 30px 15px;
+    }
+    
+    .projects a,
+    .projects-2 a {
+        width: 180px;
+        height: 180px;
+        padding: 20px;
+    }
+    
+    .projects a img,
+    .projects-2 a img {
+        width: 140px !important;
+        height: 80px !important;
+    }
+}
+
+@media (max-width: 968px) {
     .diego {
         grid-template-columns: 1fr;
         gap: 30px;
+        margin: 20px 10px;
+    }
+    
+    .navbar {
+        padding: 10px;
     }
     
     .navbar nav {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
     }
     
     .navbar nav a {
-        padding: 10px 15px;
-        font-size: 18px;
+        padding: 12px 18px;
+        font-size: 16px;
+        border-radius: 25px;
+        background: rgba(0, 255, 136, 0.1);
+        border: 1px solid rgba(0, 255, 136, 0.3);
     }
     
     .projects,
     .projects-2 {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
     }
     
     .experiencia-laboral .perfila,
     .experiencia-laboral .Amaevolucionar,
     .experiencia-laboral .platzi-associate,
     .experiencia-laboral .ITS {
+        display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     .formacion-academica .areandina,
     .formacion-academica .platzi,
     .formacion-academica .mision-tic {
+        display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .diego {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 15px 8px;
+        padding: 15px;
+    }
+    
+    .navbar nav {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .navbar nav a {
+        width: 80%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .projects,
+    .projects-2 {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .projects a,
+    .projects-2 a {
+        width: 100%;
+        max-width: 280px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .left-column {
+        order: 1;
+    }
+    
+    .center-column {
+        order: 2;
+    }
+    
+    .right-column {
+        order: 3;
+    }
+    
+    .social-media {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .social-media a {
+        padding: 12px;
+        border-radius: 50%;
+        background: rgba(0, 255, 136, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .social-media a:hover {
+        background: rgba(0, 255, 136, 0.2);
+        transform: translateY(-2px) scale(1.05);
+    }
+    
+    .contacto {
+        margin: 20px 8px;
+        padding: 30px 15px;
+    }
+    
+    .contacto button {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px auto;
+        display: block;
+        padding: 15px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
     html {
+        font-size: 16px;
+        margin: 8px;
+    }
+    
+    .diego {
+        margin: 10px 5px;
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .navbar {
+        padding: 8px;
+    }
+    
+    .navbar nav a {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 15px;
+        margin: 2px 0;
+    }
+    
+    .left-column,
+    .center-column,
+    .right-column {
+        padding: 10px 5px;
+        margin: 5px 0;
+    }
+    
+    .center-column h3 {
         font-size: 18px;
-        margin: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .center-column p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 10px 0;
+        text-align: justify;
+    }
+    
+    .right-column h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .projects a,
+    .projects-2 a {
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+        padding: 15px;
+    }
+    
+    .projects a img,
+    .projects-2 a img {
+        width: 120px !important;
+        height: 70px !important;
+        margin-bottom: 10px;
+    }
+    
+    .projects a h3,
+    .projects-2 a h3 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    
+    .social-media img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .contacto {
+        margin: 15px 5px;
+        padding: 25px 10px;
+    }
+    
+    .contacto h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .contacto p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 10px 0;
     }
     
     .contacto button {
         width: 100%;
-        margin: 5px 0;
+        max-width: 280px;
+        font-size: 14px;
+        padding: 12px;
+        margin: 6px auto;
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 14px;
+        margin: 5px;
+    }
+    
+    .diego {
+        margin: 8px 3px;
+        padding: 8px;
+        gap: 15px;
+    }
+    
+    .navbar nav a {
+        width: 95%;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .projects a,
+    .projects-2 a {
+        max-width: 220px;
+        height: 160px;
+        padding: 12px;
+    }
+    
+    .projects a img,
+    .projects-2 a img {
+        width: 100px !important;
+        height: 60px !important;
+    }
+    
+    .projects a h3,
+    .projects-2 a h3 {
+        font-size: 12px;
+    }
+    
+    .social-media img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .contacto {
+        margin: 10px 3px;
+        padding: 20px 8px;
+    }
+    
+    .contacto button {
+        max-width: 250px;
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* Mejoras adicionales para la experiencia en móviles */
+@media (max-width: 768px) {
+    /* Scroll suave mejorado */
+    html {
+        scroll-padding-top: 80px;
+    }
+    
+    /* Mejoras para las secciones de experiencia y formación */
+    .experiencia-laboral section,
+    .formacion-academica section {
+        margin-bottom: 25px;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    /* Optimización de imágenes en secciones */
+    .perfila img,
+    .Amaevolucionar img,
+    .platzi-associate img,
+    .ITS img,
+    .areandina img,
+    .platzi img,
+    .mision-tic img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto 15px auto;
+        display: block;
+        border-radius: 10px;
+    }
+    
+    /* Mejoras para listas en móviles */
+    .experiencia-laboral ol {
+        padding-left: 20px;
+    }
+    
+    .experiencia-laboral li {
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Utilidades responsivas */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Mejoras de performance para móviles */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .projects a,
+    .projects-2 a,
+    .social-media a,
+    .contacto button {
+        touch-action: manipulation;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .diego {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .left-column {
+        order: 1;
+    }
+    
+    .center-column {
+        order: 2;
+        grid-column: 1 / -1;
+    }
+    
+    .right-column {
+        order: 3;
+        grid-column: 1 / -1;
     }
 }
 

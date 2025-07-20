@@ -11,9 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Ajuste del offset para navegación fija
+                const offset = window.innerWidth <= 768 ? 80 : 50;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
@@ -39,20 +44,37 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Efecto hover para proyectos
+    // Efecto hover para proyectos (solo en dispositivos no táctiles)
     const projectLinks = document.querySelectorAll('.projects a, .projects-2 a');
     
-    projectLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-            this.style.transition = 'transform 0.3s ease';
+    if (!('ontouchstart' in window)) {
+        projectLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
         });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
+    }
 
+    // Mejoras para dispositivos táctiles
+    if ('ontouchstart' in window) {
+        projectLinks.forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            link.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    }
     // Validación simple para botones de contacto
     const contactButtons = document.querySelectorAll('.contacto button');
     
@@ -89,6 +111,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('scroll', updateActiveNav);
+
+    // Optimización de rendimiento para móviles
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Usar debounce para eventos de scroll en móviles
+    if (window.innerWidth <= 768) {
+        window.removeEventListener('scroll', updateActiveNav);
+        window.addEventListener('scroll', debounce(updateActiveNav, 100));
+    }
+
+    // Detección de orientación para móviles
+    function handleOrientationChange() {
+        setTimeout(() => {
+            // Recalcular alturas después del cambio de orientación
+            window.dispatchEvent(new Event('resize'));
+        }, 500);
+    }
+
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    // Prevenir zoom en inputs en iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+            viewport.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+        }
+    }
 });
 
 // Función para mostrar un mensaje de éxito al hacer clic en contacto
