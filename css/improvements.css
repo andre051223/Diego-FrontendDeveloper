@@ -648,6 +648,145 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Mejoras específicas para las secciones de Experiencia Laboral y Formación Académica */
+
+/* Efectos de hover para las tarjetas de experiencia */
+.perfila:hover,
+.Amaevolucionar:hover,
+.platzi-associate:hover,
+.ITS:hover,
+.areandina:hover,
+.platzi:hover,
+.mision-tic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 255, 136, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animaciones para las secciones al hacer scroll */
+.experiencia-laboral,
+.formacion-academica {
+    position: relative;
+}
+
+/* Efecto de gradiente sutil en el fondo */
+.experiencia-laboral::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 255, 136, 0.03) 0%, 
+        transparent 25%, 
+        transparent 75%, 
+        rgba(0, 255, 136, 0.03) 100%);
+    z-index: -1;
+}
+
+/* Estilo para los contenedores de información */
+.informacion-perfila,
+.informacion-amaevolucionar,
+.informacion-associate-platzi,
+.informacion-ITS,
+.informacion-areandina,
+.informacion-platzi,
+.informacion-mision-tic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Estilo para los contenedores de imágenes */
+.imagen-perfila,
+.logo-amaevolucionar,
+.logo-platzi,
+.logo-ITS,
+.logo-areandina,
+.logo-platzi,
+.logo-mision-tic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Efecto de línea de tiempo */
+.experiencia-laboral > div:not(:first-child)::before,
+.formacion-academica > div:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #00ff88, transparent);
+    z-index: 1;
+}
+
+/* Indicadores de progreso para cada sección */
+.perfila,
+.Amaevolucionar,
+.platzi-associate,
+.ITS {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.areandina,
+.platzi,
+.mision-tic {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delays para animaciones escalonadas */
+.perfila {
+    animation-delay: 0.1s;
+}
+
+.Amaevolucionar {
+    animation-delay: 0.2s;
+}
+
+.platzi-associate {
+    animation-delay: 0.3s;
+}
+
+.ITS {
+    animation-delay: 0.4s;
+}
+
+.areandina {
+    animation-delay: 0.1s;
+}
+
+.platzi {
+    animation-delay: 0.2s;
+}
+
+.mision-tic {
+    animation-delay: 0.3s;
+}
+
 /* Mejoras para la sección de contacto */
 .contacto {
     padding: 60px 20px;
@@ -706,4 +845,42 @@ h1, h2, h3, h4 {
 .page-loader.fade-out {
     opacity: 0;
     pointer-events: none;
+}
+
+/* Mejoras específicas para calidad de imagen */
+.perfila img,
+.Amaevolucionar img,
+.platzi-associate img,
+.ITS img,
+.areandina img,
+.platzi img,
+.mision-tic img {
+    /* Mejora la nitidez y calidad visual de las imágenes */
+    image-rendering: high-quality;
+    image-rendering: -webkit-optimize-contrast;
+    filter: contrast(1.1) brightness(1.05);
+    
+    /* Evita el pixelado en pantallas de alta densidad */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    
+    /* Suavizado mejorado */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejoras adicionales para móviles y pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .perfila img,
+    .Amaevolucionar img,
+    .platzi-associate img,
+    .ITS img,
+    .areandina img,
+    .platzi img,
+    .mision-tic img {
+        /* Optimización específica para pantallas retina */
+        image-rendering: -webkit-optimize-contrast;
+        filter: contrast(1.05) brightness(1.02) saturate(1.1);
+    }
 }

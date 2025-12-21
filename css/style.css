@@ -131,12 +131,31 @@ header{
 .areandina img,
 .platzi img,
 .mision-tic img{
-  width: 550px;
-  height: 600px;
-  padding: 25px;
-  padding: 1px;
-  border-radius: 10px;
-  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 300px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.15);
+  transition: all 0.3s ease;
+  border: 2px solid #333;
+  background-color: rgba(51, 51, 51, 0.3);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.perfila img:hover,
+.Amaevolucionar img:hover,
+.platzi-associate img:hover,
+.ITS img:hover,
+.areandina img:hover,
+.platzi img:hover,
+.mision-tic img:hover{
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 255, 136, 0.25);
+  border-color: #00ff88;
 }
 
 
@@ -183,22 +202,55 @@ header{
   align-items: center;
   text-align: center;
   margin-top: 15px;
-  padding: 20px;
+  padding: 40px 20px;
   width: 100%;
-  background-color: whitesmoke;
-  color: black;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
 
-  h2, h3, h4{
-    background-color: #333;
+  h2{
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 40px;
+    color: #00ff88;
+    text-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+    font-weight: 700;
+  }
+
+  h3{
     color: white;
-    margin: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 600;
+  }
+
+  h4{
+    color: #00ff88;
+    margin: 10px 0;
     padding: 10px;
+    font-size: clamp(16px, 2.5vw, 18px);
+    font-weight: 500;
   }
 
   p{
-    margin: 10px;
+    margin: 15px 0;
     padding: 10px;
-    font-size: 22px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.7;
+    color: #e0e0e0;
+  }
+
+  ol{
+    text-align: left;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+
+  li{
+    margin: 15px 0;
+    font-size: clamp(16px, 2.5vw, 18px);
+    line-height: 1.6;
+    color: #e0e0e0;
   }
 }
 
@@ -207,37 +259,107 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
-  padding: 20px;
+  margin-top: 0;
+  padding: 40px 20px;
   width: 100%;
-  background-color: black;
-  color: whitesmoke;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
 
-  h2, h3, h4{
-    background-color: #333;
+  h2{
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 40px;
+    color: #00ff88;
+    text-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+    font-weight: 700;
+  }
+
+  h3{
     color: white;
-    margin: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 600;
+  }
+
+  h4{
+    color: #00ff88;
+    margin: 10px 0;
     padding: 10px;
+    font-size: clamp(16px, 2.5vw, 18px);
+    font-weight: 500;
   }
 
   p{
-    margin: 10px;
+    margin: 15px 0;
     padding: 10px;
-    font-size: 22px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.7;
+    color: #e0e0e0;
+    text-align: left;
   }
 }
 
 .perfila,
 .Amaevolucionar,
 .platzi-associate,
-.ITS,
+.ITS{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 60px auto;
+  padding: 30px;
+  max-width: 1200px;
+  background: linear-gradient(135deg, #111, #222);
+  border-radius: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.perfila::before,
+.Amaevolucionar::before,
+.platzi-associate::before,
+.ITS::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  border-radius: 20px 20px 0 0;
+}
+
 .areandina,
 .platzi,
 .mision-tic{
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  margin: 5% auto;
-  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 60px auto;
+  padding: 30px;
+  max-width: 1200px;
+  background: linear-gradient(135deg, #111, #222);
+  border-radius: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.areandina::before,
+.platzi::before,
+.mision-tic::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  border-radius: 20px 20px 0 0;
 }
 
 
@@ -267,6 +389,8 @@ header{
     grid-template-columns: 1fr;
     text-align: center;
     gap: 20px;
+    margin: 40px 20px;
+    padding: 25px;
   }
 
   .perfila img,
@@ -279,6 +403,10 @@ header{
     width: 100%;
     max-width: 400px;
     height: auto;
+    min-height: 280px;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .projects,
@@ -405,8 +533,11 @@ header{
   .areandina,
   .platzi,
   .mision-tic {
-    margin: 20px 0;
-    padding: 15px;
+    grid-template-columns: 1fr;
+    margin: 30px 10px;
+    padding: 25px 15px;
+    gap: 20px;
+    text-align: center;
   }
 
   .perfila img,
@@ -417,9 +548,19 @@ header{
   .platzi img,
   .mision-tic img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    padding: 10px;
+    max-width: 350px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .informacion-perfila,
+  .informacion-amaevolucionar,
+  .informacion-associate-platzi,
+  .informacion-ITS,
+  .informacion-platzi,
+  .informacion-mision-tic {
+    text-align: center;
+    align-items: center;
   }
 
   .contacto {
@@ -535,6 +676,28 @@ header{
     margin: 5px 0;
     padding: 5px;
   }
+
+  .perfila,
+  .Amaevolucionar,
+  .platzi-associate,
+  .ITS,
+  .areandina,
+  .platzi,
+  .mision-tic {
+    margin: 20px 5px;
+    padding: 15px 10px;
+  }
+
+  .perfila img,
+  .Amaevolucionar img,
+  .platzi-associate img,
+  .ITS img,
+  .areandina img,
+  .platzi img,
+  .mision-tic img {
+    height: 250px;
+    max-width: 300px;
+  }
 }
 
 /* Móviles muy pequeños */
@@ -562,6 +725,34 @@ header{
     max-width: 220px;
     height: 160px;
     padding: 12px;
+  }
+
+  .projects a img,
+  .projects-2 a img {
+    width: 100px !important;
+    height: 50px !important;
+  }
+
+  .perfila,
+  .Amaevolucionar,
+  .platzi-associate,
+  .ITS,
+  .areandina,
+  .platzi,
+  .mision-tic {
+    margin: 15px 3px;
+    padding: 12px 8px;
+  }
+
+  .perfila img,
+  .Amaevolucionar img,
+  .platzi-associate img,
+  .ITS img,
+  .areandina img,
+  .platzi img,
+  .mision-tic img {
+    height: 200px;
+    max-width: 250px;
   }
 
   .projects a img,
