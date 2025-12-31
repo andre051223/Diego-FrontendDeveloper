@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Efecto hover para proyectos (solo en dispositivos no táctiles)
-    const projectLinks = document.querySelectorAll('.projects a, .projects-2 a');
+    const projectLinks = document.querySelectorAll('.projects a');
     
     if (!('ontouchstart' in window)) {
         projectLinks.forEach(link => {
@@ -149,29 +149,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-// Función para mostrar un mensaje de éxito al hacer clic en contacto
-function showSuccessMessage(message) {
-    const successDiv = document.createElement('div');
-    successDiv.innerHTML = `
-        <div style="
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #28a745;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        ">
-            ${message}
-        </div>
-    `;
-    
-    document.body.appendChild(successDiv);
-    
-    setTimeout(() => {
-        successDiv.remove();
-    }, 3000);
-}

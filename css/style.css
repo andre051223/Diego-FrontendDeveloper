@@ -95,13 +95,14 @@ header{
 }
 
 
-.projects,
-.projects-2{
+.projects {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  gap: 10px;
 
   button{
     display: flex;
@@ -130,20 +131,28 @@ header{
 .ITS img,
 .areandina img,
 .platzi img,
-.mision-tic img{
+.mision-tic img,
+.nueva-experiencia img{
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  height: 100%;
   min-height: 300px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 255, 136, 0.15);
   transition: all 0.3s ease;
   border: 2px solid #333;
-  background-color: rgba(51, 51, 51, 0.3);
+  padding: 0;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+}
+
+.Amaevolucionar img,
+.areandina img,
+.platzi img,
+.mision-tic img,
+.nueva-experiencia img {
+  object-fit: contain;
 }
 
 .perfila img:hover,
@@ -152,7 +161,8 @@ header{
 .ITS img:hover,
 .areandina img:hover,
 .platzi img:hover,
-.mision-tic img:hover{
+.mision-tic img:hover,
+.nueva-experiencia img:hover{
   transform: scale(1.02);
   box-shadow: 0 12px 35px rgba(0, 255, 136, 0.25);
   border-color: #00ff88;
@@ -232,25 +242,19 @@ header{
     font-weight: 500;
   }
 
-  p{
+  p, li {
     margin: 15px 0;
     padding: 10px;
     font-size: clamp(16px, 2.5vw, 20px);
     line-height: 1.7;
     color: #e0e0e0;
+    text-align: left;
   }
 
   ol{
     text-align: left;
     margin: 20px 0;
     padding: 0 20px;
-  }
-
-  li{
-    margin: 15px 0;
-    font-size: clamp(16px, 2.5vw, 18px);
-    line-height: 1.6;
-    color: #e0e0e0;
   }
 }
 
@@ -290,7 +294,7 @@ header{
     font-weight: 500;
   }
 
-  p{
+  p, li {
     margin: 15px 0;
     padding: 10px;
     font-size: clamp(16px, 2.5vw, 20px);
@@ -303,7 +307,8 @@ header{
 .perfila,
 .Amaevolucionar,
 .platzi-associate,
-.ITS{
+.ITS,
+.nueva-experiencia{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -321,7 +326,8 @@ header{
 .perfila::before,
 .Amaevolucionar::before,
 .platzi-associate::before,
-.ITS::before{
+.ITS::before,
+.nueva-experiencia::before{
   content: '';
   position: absolute;
   top: 0;
@@ -383,9 +389,7 @@ header{
   .Amaevolucionar,
   .platzi-associate,
   .ITS,
-  .areandina,
-  .platzi,
-  .mision-tic {
+  .nueva-experiencia {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 20px;
@@ -397,6 +401,10 @@ header{
   .Amaevolucionar img,
   .platzi-associate img,
   .ITS img,
+  .areandina img,
+  .platzi img,
+  .mision-tic img,
+  .nueva-experiencia
   .areandina img,
   .platzi img,
   .mision-tic img {

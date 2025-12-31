@@ -74,8 +74,7 @@
 }
 
 /* Mejoras para proyectos */
-.projects a,
-.projects-2 a {
+.projects a {
     padding: 25px;
     border-radius: var(--border-radius);
     background: linear-gradient(135deg, var(--secondary-color), #444);
@@ -91,10 +90,10 @@
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
+    margin: 5px;
 }
 
-.projects a img,
-.projects-2 a img {
+.projects a img {
     width: 200px !important;
     height: 100px !important;
     object-fit: contain;
