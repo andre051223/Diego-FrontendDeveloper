@@ -134,8 +134,7 @@ header{
 .mision-tic img,
 .nueva-experiencia img{
   width: 100%;
-  height: 100%;
-  min-height: 300px;
+  height: auto;
   object-fit: cover;
   object-position: center;
   border-radius: 15px;
@@ -404,16 +403,12 @@ header{
   .areandina img,
   .platzi img,
   .mision-tic img,
-  .nueva-experiencia
-  .areandina img,
-  .platzi img,
-  .mision-tic img {
+  .nueva-experiencia img {
     width: 100%;
     max-width: 400px;
     height: auto;
-    min-height: 280px;
     margin: 0 auto;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
@@ -554,11 +549,13 @@ header{
   .ITS img,
   .areandina img,
   .platzi img,
-  .mision-tic img {
+  .mision-tic img,
+  .nueva-experiencia img {
     width: 100%;
     max-width: 350px;
-    height: 300px;
+    height: auto;
     margin: 0 auto;
+    object-fit: cover;
   }
 
   .informacion-perfila,
@@ -773,4 +770,37 @@ header{
     font-size: 14px;
     padding: 10px;
   }
+}
+
+.imagen-nueva-experiencia {
+  background-color: black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-nueva-experiencia img {
+  background-color: transparent;
+  filter: grayscale(100%) invert(100%);
+  box-shadow: none;
+  border: none;
+}
+
+/* Configuración específica para Perfila e ITS */
+.perfila .imagen-perfila,
+.ITS .logo-ITS {
+  background-color: black !important;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfila .imagen-perfila img,
+.ITS .logo-ITS img {
+  background-color: transparent !important;
+  filter: grayscale(100%) invert(100%) !important;
+  box-shadow: none !important;
+  border: none !important;
 }
