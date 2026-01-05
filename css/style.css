@@ -782,7 +782,7 @@ header{
 
 .imagen-nueva-experiencia img {
   background-color: transparent;
-  filter: grayscale(100%) invert(100%);
+  filter: brightness(0) invert(1);
   box-shadow: none;
   border: none;
 }
@@ -797,10 +797,16 @@ header{
   align-items: center;
 }
 
-.perfila .imagen-perfila img,
+.perfila .imagen-perfila img {
+  background-color: transparent !important;
+  filter: brightness(0) invert(1) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 .ITS .logo-ITS img {
   background-color: transparent !important;
-  filter: grayscale(100%) invert(100%) !important;
+  filter: grayscale(100%) invert(100%) brightness(200%) contrast(200%) !important;
   box-shadow: none !important;
   border: none !important;
 }
